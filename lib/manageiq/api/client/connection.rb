@@ -107,7 +107,7 @@ module ManageIQ
               request.body = yield(block).to_json if block
             end
           rescue => err
-            raise "Failed to send request to #{url} - #{err}"
+            raise "Failed to send request to #{url} - #{err.message}"
           end
           check_response
         end
